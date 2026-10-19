@@ -161,36 +161,45 @@
 </head>
 <body>
 
-  <!-- Site Navigation Header -->
+  <!-- Site Navigation Header (56px Pixel 8 Optimized) -->
   <header class="site-header" id="siteHeader">
     <div class="nav-container">
       <a href="#hero" class="brand-logo" aria-label="The Spice Club Home">
+        <div class="logo-crest" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 8 L54 36 L82 22 L62 48 L90 52 L62 60 L82 82 L54 68 L50 96 L46 68 L18 82 L38 60 L10 52 L38 48 L18 22 L46 36 Z"/>
+          </svg>
+        </div>
         <div class="logo-text-wrap">
           <span class="logo-title">The Spice Club</span>
-          <span class="logo-tagline">Indian Cuisine • The Pearl Qatar</span>
+          <span class="logo-tagline"><span class="open-status-dot"></span> The Pearl Doha</span>
         </div>
       </a>
 
       <!-- Desktop Links -->
-      <nav aria-label="Primary Navigation">
+      <nav aria-label="Primary Navigation" class="desktop-nav-wrap">
         <ul class="nav-links">
-          <li><a href="#flipbook-section" class="nav-link">Menu</a></li>
-          <li><a href="#digital-menu" class="nav-link">Explore Dishes</a></li>
+          <li><a href="#flipbook-section" class="nav-link">Menu Book</a></li>
+          <li><a href="#digital-menu" class="nav-link">A La Carte</a></li>
           <li><a href="#showcase" class="nav-link">Signatures</a></li>
-          <li><a href="#experience" class="nav-link">Canal Dining</a></li>
-          <li><a href="#location" class="nav-link">Location</a></li>
+          <li><a href="#experience" class="nav-link">Ambiance</a></li>
           <li><a href="#reservation" class="nav-link">Reservations</a></li>
+          <li><a href="#location" class="nav-link">Location</a></li>
         </ul>
       </nav>
 
       <!-- Header Action CTAs -->
       <div class="nav-actions">
-        <a href="tel:+97431227533" class="header-phone-link" title="Call for Reservations">
-          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/></svg>
+        <a href="tel:+97431227533" class="header-phone-link" title="Call Concierge">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/></svg>
           <span>+974 3122 7533</span>
         </a>
-        <a href="#reservation" class="btn-gold">Book a Table</a>
-        <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Open Mobile Menu">☰</button>
+        <a href="#reservation" class="btn-gold btn-header-reserve">
+          <span>Book Table</span>
+        </a>
+        <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Open Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -199,20 +208,21 @@
   <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Mobile Menu">&times;</button>
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h3 style="font-family: var(--font-display); color: var(--gold-primary); font-size: 1.5rem; letter-spacing: 0.15em;">THE SPICE CLUB</h3>
-      <p style="font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase;">Qanat Quartier • The Pearl Qatar</p>
+      <div class="drawer-crest">✦ SC ✦</div>
+      <h3 style="font-family: var(--font-display); color: var(--gold-primary); font-size: 1.4rem; letter-spacing: 0.15em; margin-top: 0.5rem;">THE SPICE CLUB</h3>
+      <p style="font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase;">Qanat Quartier • The Pearl Island, Doha</p>
     </div>
     <ul class="mobile-nav-list">
-      <li><a href="#flipbook-section" class="mobile-nav-link">📖 Menu</a></li>
-      <li><a href="#digital-menu" class="mobile-nav-link">🍛 All Specialties</a></li>
-      <li><a href="#showcase" class="mobile-nav-link">👑 Signature Dishes</a></li>
-      <li><a href="#experience" class="mobile-nav-link">🌊 Canal Terrace Dining</a></li>
-      <li><a href="#location" class="mobile-nav-link">📍 Map & Directions</a></li>
-      <li><a href="#reservation" class="mobile-nav-link text-gold">📅 Reserve a Table</a></li>
+      <li><a href="#flipbook-section" class="mobile-nav-link">📖 Royal Menu Book</a></li>
+      <li><a href="#digital-menu" class="mobile-nav-link">🍛 A La Carte Catalog (67 Dishes)</a></li>
+      <li><a href="#showcase" class="mobile-nav-link">👑 Chef's Signature Creations</a></li>
+      <li><a href="#experience" class="mobile-nav-link">🌊 Venetian Canal Terrace</a></li>
+      <li><a href="#reservation" class="mobile-nav-link text-gold">🍽️ Reserve a Table (Instant Pass)</a></li>
+      <li><a href="#location" class="mobile-nav-link">📍 Directions & Valet Info</a></li>
     </ul>
-    <div style="margin-top: 2.5rem; text-align: center;">
-      <a href="https://wa.me/97431227533" target="_blank" rel="noopener" class="btn-outline-gold" style="width: 100%; margin-bottom: 0.75rem;">
-        💬 WhatsApp Booking
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="https://wa.me/97431227533" target="_blank" rel="noopener" class="btn-gold" style="width: 100%; margin-bottom: 0.75rem; justify-content: center;">
+        💬 WhatsApp VIP Concierge
       </a>
       <a href="tel:+97431227533" style="color: var(--text-secondary); font-size: 0.85rem; display: block;">
         📞 +974 3122 7533
@@ -220,35 +230,45 @@
     </div>
   </aside>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Calibrated for Pixel 8 412x915) -->
   <section class="hero-section" id="hero">
     <div class="hero-bg-wrapper">
       <img src="assets/images/interior_dining_8k.jpg" alt="The Spice Club Restaurant Luxury Interior with Chandeliers and Venetian Canal View" class="hero-bg-image" width="1920" height="1080" fetchpriority="high">
       <div class="hero-overlay"></div>
     </div>
 
-    <div class="container">
+    <div class="container hero-container">
       <div class="hero-content">
+        <div class="hero-crest-badge">
+          <span class="hero-crest-dot"></span>
+          <span>Qanat Quartier • The Pearl Island, Doha</span>
+        </div>
+
         <h1 class="hero-title">
-          Where Royal Indian Heritage
-          <span>Meets Venetian Elegance</span>
+          Where Royal Heritage
+          <span class="gold-gradient-text">Meets Venetian Elegance</span>
         </h1>
 
         <p class="hero-subtitle">
-          Nestled along the picturesque turquoise canals of Qanat Quartier, The Pearl Island. Savor slow-cooked Awadhi dum biryanis, glowing charcoal tandoori cuts, and romantic waterfront dining under the Arabian stars.
+          Nestled along the turquoise canals of Qanat Quartier. Savor slow-cooked Awadhi dum biryanis, glowing charcoal tandoori cuts, and romantic waterfront canal dining under the Arabian stars.
         </p>
 
         <div class="hero-cta-group">
-          <a href="#reservation" class="btn-gold" id="heroBookBtn">
-            <span>Reserve Your Table</span>
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="#reservation" class="btn-gold hero-cta-btn" id="heroBookBtn">
+            <span>Reserve Table</span>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#flipbook-section" class="btn-outline-gold" id="heroMenuBtn">
-            <span>Explore Menu 📖</span>
+          <a href="#flipbook-section" class="btn-outline-gold hero-cta-btn" id="heroMenuBtn">
+            <span>📖 Explore Menu</span>
           </a>
         </div>
 
-
+        <!-- Micro-trust pills -->
+        <div class="hero-trust-bar">
+          <div class="trust-pill"><span>⭐</span> 4.8 Rating (520+ Reviews)</div>
+          <div class="trust-pill"><span>✦</span> 100% Halal</div>
+          <div class="trust-pill"><span>🚗</span> Valet Parking</div>
+        </div>
       </div>
     </div>
   </section>
@@ -274,6 +294,36 @@
       <span>✦ PURE GHEE & COLD-PRESSED SPICES</span>
     </div>
   </div>
+
+  <!-- Mobile Sticky Segmented Navigation Bar (Refero Pattern) -->
+  <nav class="mobile-segmented-bar" id="mobileSegmentedBar" aria-label="Section Navigation">
+    <div class="segmented-scroll-track" id="segmentedTrack">
+      <a href="#flipbook-section" class="segment-tab active" data-target="flipbook-section">
+        <span class="seg-icon">📖</span>
+        <span>Menu Book</span>
+      </a>
+      <a href="#digital-menu" class="segment-tab" data-target="digital-menu">
+        <span class="seg-icon">🍛</span>
+        <span>A La Carte</span>
+      </a>
+      <a href="#showcase" class="segment-tab" data-target="showcase">
+        <span class="seg-icon">👑</span>
+        <span>Signatures</span>
+      </a>
+      <a href="#experience" class="segment-tab" data-target="experience">
+        <span class="seg-icon">🌊</span>
+        <span>Ambiance</span>
+      </a>
+      <a href="#reservation" class="segment-tab" data-target="reservation">
+        <span class="seg-icon">🍽️</span>
+        <span>Reserve</span>
+      </a>
+      <a href="#location" class="segment-tab" data-target="location">
+        <span class="seg-icon">📍</span>
+        <span>Location</span>
+      </a>
+    </div>
+  </nav>
 
   <!-- Section Bisection Line -->
   <div class="section-bisection-line" role="presentation"></div>
@@ -511,6 +561,19 @@
             Located in the serene pastel waterways of Qanat Quartier—often celebrated as the Venice of Doha—The Spice Club offers an enchanting dual ambiance. Choose between our romantic outdoor canal-side terrace overlooking Venetian-style arched bridges or our intimate indoor dining hall wrapped in rich mahogany, glowing chandeliers, and plush teal velvet.
           </p>
 
+          <!-- Interactive Ambiance Switcher Pills -->
+          <div class="ambiance-mode-pills" id="ambianceModePills">
+            <button type="button" class="ambiance-pill-btn active" data-img="assets/images/canal_terrace.jpg" data-title="Romantic Canal-Side Terrace" data-badge="Venetian Waterway Terrace • Doha, Qatar" data-zone="Canal Terrace">
+              <span>🌊 Canal Terrace</span>
+            </button>
+            <button type="button" class="ambiance-pill-btn" data-img="assets/images/interior_dining_8k.jpg" data-title="Royal Maharaja Dining Hall" data-badge="Crystal Chandeliers & Mughal Archways" data-zone="Maharaja Hall">
+              <span>👑 Maharaja Hall</span>
+            </button>
+            <button type="button" class="ambiance-pill-btn" data-img="assets/images/royal_cocktails_terrace.jpg" data-title="Celebration & Private Alcoves" data-badge="Intimate Velvet Booths" data-zone="Private Alcove">
+              <span>🥂 Private Alcove</span>
+            </button>
+          </div>
+
           <ul class="experience-features-list">
             <li class="exp-feature-row">
               <div class="exp-feature-bullet">🌊</div>
@@ -536,7 +599,7 @@
           </ul>
 
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="#reservation" class="btn-gold">Book Canal-Side Table</a>
+            <a href="#reservation" class="btn-gold" id="expBookAreaBtn">Book This Seating Area</a>
             <a href="https://maps.app.goo.gl/FoPrZM3D5gmwV8eM9" target="_blank" rel="noopener" class="btn-outline-gold">
               📍 View on Google Maps
             </a>
@@ -563,11 +626,13 @@
 
         <!-- The Reservation Form -->
         <form class="booking-form" id="tableBookingForm">
-          <!-- Step 1: Party Size -->
-          <div>
+          <!-- Step 1: Party Size & Seating Zone -->
+          <div class="form-step-block">
             <div class="form-step-title">
-              <span>1</span> Number of Guests
+              <span>1</span> Guests & Seating Preference
             </div>
+            
+            <label class="form-sub-label">Number of Guests</label>
             <div class="guest-chips-grid">
               <button type="button" class="guest-chip-btn" data-guests="1">1</button>
               <button type="button" class="guest-chip-btn active" data-guests="2">2</button>
@@ -577,6 +642,22 @@
               <button type="button" class="guest-chip-btn" data-guests="6">6</button>
               <button type="button" class="guest-chip-btn" data-guests="8">8</button>
               <button type="button" class="guest-chip-btn" data-guests="10">10+</button>
+            </div>
+
+            <label class="form-sub-label" style="margin-top: 1.15rem;">Preferred Atmosphere & Zone</label>
+            <div class="dining-zone-chips-grid" id="zoneChips">
+              <button type="button" class="zone-chip-btn active" data-zone="Canal Terrace">
+                <span class="zone-icon">🌊</span>
+                <span>Canal Terrace (Waterfront)</span>
+              </button>
+              <button type="button" class="zone-chip-btn" data-zone="Maharaja Hall">
+                <span class="zone-icon">👑</span>
+                <span>Maharaja Hall (Chandeliers)</span>
+              </button>
+              <button type="button" class="zone-chip-btn" data-zone="Private Alcove">
+                <span class="zone-icon">🥂</span>
+                <span>Private Alcove / Booth</span>
+              </button>
             </div>
           </div>
 
@@ -700,6 +781,10 @@
                 <p id="voucherDateTime">Tonight at 8:00 PM</p>
               </div>
               <div class="voucher-data-item">
+                <p>Dining Zone</p>
+                <p id="voucherZone">Canal Terrace (Waterfront)</p>
+              </div>
+              <div class="voucher-data-item">
                 <p>Occasion</p>
                 <p id="voucherOccasion">Dinner</p>
               </div>
@@ -711,8 +796,11 @@
           </div>
 
           <div class="voucher-actions">
-            <a href="tel:+97431227533" id="voucherCallBtn" target="_blank" rel="noopener" class="btn-gold">
-              <span>📞 Call to Confirm (+974 3122 7533)</span>
+            <a href="https://wa.me/97431227533" id="voucherWhatsAppBtn" target="_blank" rel="noopener" class="btn-gold" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); border-color: #25D366; color: #fff;">
+              <span>💬 Confirm via WhatsApp (+974 3122 7533)</span>
+            </a>
+            <a href="tel:+97431227533" id="voucherCallBtn" class="btn-outline-gold">
+              <span>📞 Direct Concierge Call</span>
             </a>
             <button type="button" id="voucherCalendarBtn" class="btn-outline-gold">
               <span>📅 Add to Calendar (.ics)</span>
@@ -1044,10 +1132,11 @@
   </nav>
 
   <!-- ==========================================================================
-       Interactive Royal Dish Spec Modal (Refero Luxury Pattern)
+       Interactive Royal Dish Spec Modal (Refero Luxury Bottom Sheet Pattern)
        ========================================================================== -->
   <div class="dish-modal-backdrop" id="dishModalBackdrop" aria-hidden="true">
     <div class="dish-modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalDishName">
+      <div class="bottom-sheet-handle" aria-hidden="true"></div>
       <button type="button" class="dish-modal-close" id="dishModalClose" aria-label="Close dialog">&times;</button>
       
       <div class="dish-modal-body">
@@ -1084,6 +1173,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Micro-Toast Floating Notification (Pixel 8 Tactile Feedback) -->
+  <div class="toast-notification-wrap" id="toastNotification" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>

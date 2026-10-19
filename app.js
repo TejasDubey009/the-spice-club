@@ -177,6 +177,7 @@ const AppState = {
     date: '',
     time: '8:00 PM',
     occasion: 'Casual Dinner',
+    zone: 'Canal Terrace',
     name: '',
     phone: '',
     email: '',
@@ -674,12 +675,15 @@ const DigitalMenuEngine = {
           AppState.selectedTastingItems.delete(id);
           btn.classList.remove('selected');
           btn.textContent = '+ Reserve Dish';
+          this.updateReservationNotesWithTasting();
+          showToast(`Removed ${name}`, '🗑️');
         } else {
           AppState.selectedTastingItems.add(id);
           btn.classList.add('selected');
           btn.textContent = '✓ Added';
           soundManager.playFlip();
           this.updateReservationNotesWithTasting();
+          showToast(`Added ${name} to your VIP table reservation!`, '🍛');
         }
       });
     });
@@ -784,6 +788,7 @@ const ReservationEngine = {
     this.form = document.getElementById('tableBookingForm');
     this.confirmScreen = document.getElementById('bookingConfirmation');
     this.guestChips = document.querySelectorAll('.guest-chip-btn');
+    this.zoneChips = document.querySelectorAll('.zone-chip-btn');
     this.timeSlotPills = document.querySelectorAll('.time-slot-pill');
     this.dateInput = document.getElementById('bookingDate');
 
@@ -810,6 +815,17 @@ const ReservationEngine = {
         this.guestChips.forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
         AppState.reservation.guests = parseInt(chip.getAttribute('data-guests'), 10);
+        showToast(`Party size: ${AppState.reservation.guests} Guests`, '👥');
+      });
+    });
+
+    // Dining zone chips
+    this.zoneChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        this.zoneChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        AppState.reservation.zone = chip.getAttribute('data-zone');
+        showToast(`Preferred zone: ${AppState.reservation.zone}`, '📍');
       });
     });
 
@@ -819,6 +835,7 @@ const ReservationEngine = {
         this.timeSlotPills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
         AppState.reservation.time = pill.getAttribute('data-time');
+        showToast(`Slot chosen: ${AppState.reservation.time}`, '🕒');
       });
     });
 
@@ -849,6 +866,7 @@ const ReservationEngine = {
     const email = document.getElementById('bookingEmail')?.value.trim();
     const occasion = document.getElementById('bookingOccasion')?.value || 'Dinner';
     const notes = document.getElementById('bookingNotes')?.value.trim();
+    const zone = AppState.reservation.zone || 'Canal Terrace';
 
     if (!name || !phone) {
       alert('Please provide your name and phone number for table reservation.');
@@ -876,21 +894,28 @@ const ReservationEngine = {
     
     const occEl = document.getElementById('voucherOccasion');
     if (occEl) occEl.textContent = occasion;
+    const zoneEl = document.getElementById('voucherZone');
+    if (zoneEl) zoneEl.textContent = zone;
 
     // Build WhatsApp Deep Link
     const waText = encodeURIComponent(
       `Hello The Spice Club Restaurant (Doha, Qatar),\n\n` +
       `I would like to confirm my Table Reservation:\n` +
-      `• Reference: ${bookingRef}\n` +
-      `• Name: ${name}\n` +
-      `• Guests: ${AppState.reservation.guests} Persons\n` +
+      `• VIP Pass Ref: ${bookingRef}\n` +
+      `• Guest Name: ${name}\n` +
+      `• Party Size: ${AppState.reservation.guests} Persons\n` +
+      `• Seating Zone: ${zone}\n` +
       `• Date & Time: ${AppState.reservation.date} at ${AppState.reservation.time}\n` +
-      `• Dining Occasion: ${occasion}\n` +
+      `• Occasion: ${occasion}\n` +
       (notes ? `• Special Requests / Selected Dishes: ${notes}\n` : '') +
-      `\nPlease confirm table availability. Thank you!`
+      `\nPlease confirm availability for our table at Qanat Quartier, The Pearl Island. Thank you!`
     );
 
-    const callBtn = document.getElementById('voucherCallBtn') || document.getElementById('voucherWhatsAppBtn');
+    const waBtn = document.getElementById('voucherWhatsAppBtn');
+    if (waBtn) {
+      waBtn.href = `https://wa.me/97431227533?text=${waText}`;
+    }
+    const callBtn = document.getElementById('voucherCallBtn');
     if (callBtn) {
       callBtn.href = 'tel:+97431227533';
     }
@@ -904,6 +929,7 @@ const ReservationEngine = {
     if (this.form) this.form.style.display = 'none';
     this.confirmScreen?.classList.add('active');
     this.confirmScreen?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    showToast('VIP Pass Generated! Tap WhatsApp to confirm', '🎉');
   },
 
   downloadIcsFile(bookingRef, name, dateStr, timeStr) {
@@ -948,6 +974,127 @@ END:VCALENDAR`;
 };
 
 // ==========================================================================
+// Micro-Toast Notification System (Pixel 8 Tactile Feedback)
+// ==========================================================================
+function showToast(message, icon = '✨') {
+  const toast = document.getElementById('toastNotification');
+  const toastText = document.getElementById('toastText');
+  if (!toast) return;
+  if (toastText) toastText.innerHTML = `${icon} ${message}`;
+  toast.classList.add('active');
+  clearTimeout(showToast.timeout);
+  showToast.timeout = setTimeout(() => {
+    toast.classList.remove('active');
+  }, 2600);
+}
+
+// ==========================================================================
+// Pixel 8 Sticky Segmented Navigation Bar Controller
+// ==========================================================================
+const SegmentedNav = {
+  init() {
+    this.bar = document.getElementById('mobileSegmentedBar');
+    this.buttons = document.querySelectorAll('.segment-tab');
+    if (!this.bar || this.buttons.length === 0) return;
+
+    this.buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = btn.getAttribute('data-target');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          this.buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          const headerOffset = 105;
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    this.setupScrollSpy();
+  },
+
+  setupScrollSpy() {
+    const sectionIds = ['flipbook-section', 'digital-menu', 'showcase', 'experience', 'reservation', 'location'];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        scrollTimeout = null;
+        const scrollPos = window.scrollY + 130;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const sec = sections[i];
+          if (sec.offsetTop <= scrollPos) {
+            const id = sec.id;
+            const activeBtn = document.querySelector(`.segment-tab[data-target="${id}"]`);
+            if (activeBtn && !activeBtn.classList.contains('active')) {
+              this.buttons.forEach(b => b.classList.remove('active'));
+              activeBtn.classList.add('active');
+              activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+            break;
+          }
+        }
+      }, 50);
+    }, { passive: true });
+  }
+};
+
+// ==========================================================================
+// Interactive Ambiance Switcher
+// ==========================================================================
+const AmbianceSwitcher = {
+  init() {
+    this.pills = document.querySelectorAll('.ambiance-pill-btn');
+    this.mainImg = document.querySelector('.experience-main-img');
+    this.badgeTitle = document.querySelector('.badge-number');
+    this.badgeLabel = document.querySelector('.badge-label');
+    if (!this.pills.length || !this.mainImg) return;
+
+    this.pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        this.pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const imgPath = pill.getAttribute('data-img');
+        const title = pill.getAttribute('data-title');
+        const badge = pill.getAttribute('data-badge');
+        const zone = pill.getAttribute('data-zone');
+
+        this.mainImg.style.opacity = '0.35';
+        this.mainImg.style.transform = 'scale(0.98)';
+        
+        setTimeout(() => {
+          this.mainImg.src = imgPath;
+          if (this.badgeTitle && title) this.badgeTitle.textContent = title;
+          if (this.badgeLabel && badge) this.badgeLabel.textContent = badge;
+          this.mainImg.style.opacity = '1';
+          this.mainImg.style.transform = 'scale(1)';
+        }, 180);
+
+        if (zone) {
+          const zoneBtn = document.querySelector(`.zone-chip-btn[data-zone="${zone}"]`);
+          if (zoneBtn) {
+            document.querySelectorAll('.zone-chip-btn').forEach(z => z.classList.remove('active'));
+            zoneBtn.classList.add('active');
+            AppState.reservation.zone = zone;
+          }
+          showToast(`Atmosphere set to ${zone}`, '✨');
+        }
+      });
+    });
+  }
+};
+
+// ==========================================================================
 // General Site Enhancements & DOM Ready
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -955,6 +1102,8 @@ document.addEventListener('DOMContentLoaded', () => {
   FlipbookEngine.init();
   DigitalMenuEngine.init();
   ReservationEngine.init();
+  SegmentedNav.init();
+  AmbianceSwitcher.init();
 
   // Scroll Header Effect
   const header = document.querySelector('.site-header');
@@ -1048,6 +1197,7 @@ document.addEventListener('DOMContentLoaded', () => {
           notesField.value = notesField.value ? `${notesField.value}, ${dish}` : `Chef's Choice: ${dish}`;
         }
       }
+      showToast(`Pre-selected: ${dish}`, '👑');
       document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' });
       if (notesField) {
         notesField.focus();
@@ -1103,6 +1253,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!notesField.value.includes(currentModalDish)) {
         notesField.value = notesField.value ? `${notesField.value}, ${currentModalDish}` : `Selected Special: ${currentModalDish}`;
       }
+      showToast(`Added ${currentModalDish} to reservation notes`, '🍽️');
     }
     document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' });
     if (notesField) notesField.focus();
