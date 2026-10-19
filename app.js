@@ -890,9 +890,9 @@ const ReservationEngine = {
       `\nPlease confirm table availability. Thank you!`
     );
 
-    const waBtn = document.getElementById('voucherWhatsAppBtn');
-    if (waBtn) {
-      waBtn.href = `https://wa.me/97431227533?text=${waText}`;
+    const callBtn = document.getElementById('voucherCallBtn') || document.getElementById('voucherWhatsAppBtn');
+    if (callBtn) {
+      callBtn.href = 'tel:+97431227533';
     }
 
     // Attach Calendar Generator
