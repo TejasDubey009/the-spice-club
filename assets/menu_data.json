@@ -1,0 +1,632 @@
+[
+  {
+    "category": "Desi Momos",
+    "categoryAr": "المومو الهندي",
+    "page": 1,
+    "description": "Handcrafted Himalayan-style dumplings filled with aromatic herbs and savory fillings, served with spicy sesame chutney.",
+    "items": [
+      {
+        "name": "Desi Chicken Momo (Steamed)",
+        "nameAr": "مومو دجاج مبخر",
+        "price": 28,
+        "veg": false,
+        "spicy": 1,
+        "desc": "Juicy chicken filling wrapped in delicate dough, steamed to perfection for a light and flavorful bite."
+      },
+      {
+        "name": "Desi Chicken Momo (Fried)",
+        "nameAr": "مومو دجاج مقلي",
+        "price": 30,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Crispy on the outside, tender spiced chicken filling inside — a bold twist on the classic momo."
+      },
+      {
+        "name": "Chicken Tandoori Momo",
+        "nameAr": "مومو دجاج تندوري",
+        "price": 35,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Juicy chicken momos coated in a smoky tandoori marinade and charred over live charcoal.",
+        "special": true
+      },
+      {
+        "name": "Desi Vegetable Momo (Steamed)",
+        "nameAr": "مومو خضار مبخر",
+        "price": 24,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Finely chopped garden vegetables with Himalayan herbs in delicate steamed wrappers."
+      },
+      {
+        "name": "Desi Vegetable Momo (Fried)",
+        "nameAr": "مومو خضار مقلي",
+        "price": 26,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Golden crispy dumplings stuffed with seasoned fresh vegetables and ginger."
+      },
+      {
+        "name": "Vegetable Tandoori Momo",
+        "nameAr": "مومو خضار تندوري",
+        "price": 32,
+        "veg": true,
+        "spicy": 3,
+        "desc": "Crispy vegetable dumplings roasted in tandoor with aromatic spice crust.",
+        "special": true
+      }
+    ]
+  },
+  {
+    "category": "Royal Biryanis & Rice",
+    "categoryAr": "البرياني الملكي والأرز",
+    "page": 2,
+    "description": "Fragrant long-grain aged Basmati rice layered with slow-cooked meats or vegetables, saffron, and Awadhi dum spices.",
+    "items": [
+      {
+        "name": "The Spice Club Butter Chicken Biryani",
+        "nameAr": "برياني بتر تشيكن الخاص",
+        "price": 42,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Our signature fusion masterpiece — tandoori chicken simmered in rich makhani gravy layered with saffron basmati rice.",
+        "special": true
+      },
+      {
+        "name": "Dum Pukht Mutton Biryani",
+        "nameAr": "برياني لحم ضأن دم بخت",
+        "price": 48,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Tender lamb chunks marinated in royal Awadhi spices and slow-cooked in a sealed clay pot.",
+        "special": true
+      },
+      {
+        "name": "Chicken Tikka Biryani",
+        "nameAr": "برياني تكا دجاج",
+        "price": 38,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Smoky char-grilled chicken tikka layered with spiced basmati rice, caramelized onions, and fresh mint."
+      },
+      {
+        "name": "Tandoori Chicken Biryani",
+        "nameAr": "برياني دجاج تندوري",
+        "price": 36,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Classic whole tandoori-spiced chicken pieces tossed with aromatic spiced rice."
+      },
+      {
+        "name": "Prawns Biryani",
+        "nameAr": "برياني روبيان",
+        "price": 48,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Succulent Arabian Gulf prawns simmered with saffron, crushed spices, and fluffy basmati rice."
+      },
+      {
+        "name": "Egg Biryani",
+        "nameAr": "برياني بيض",
+        "price": 28,
+        "veg": false,
+        "spicy": 1,
+        "desc": "Golden pan-roasted spiced eggs layered over aromatic herbal basmati rice."
+      },
+      {
+        "name": "Paneer Tikka Biryani",
+        "nameAr": "برياني بانير تكا",
+        "price": 32,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Char-grilled cottage cheese tikka cubes with mint, saffron, and spiced basmati rice."
+      },
+      {
+        "name": "Paneer Butter Biryani",
+        "nameAr": "برياني بانير زبدة",
+        "price": 30,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Fragrant basmati rice gently cooked with creamy butter-infused spiced cottage cheese."
+      },
+      {
+        "name": "Royal Veg Biryani",
+        "nameAr": "برياني خضار ملكي",
+        "price": 22,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Fragrant basmati rice layered with spiced garden vegetables, mint, and toasted saffron."
+      }
+    ]
+  },
+  {
+    "category": "Tandoor & Charcoal Kebabs",
+    "categoryAr": "مشاوي وكباب التندور",
+    "page": 3,
+    "description": "Slow-roasted over authentic clay tandoors with signature marinades of hung curd, Kashmiri chilies, and whole ground spices.",
+    "items": [
+      {
+        "name": "Chicken Seekh Kebab",
+        "nameAr": "كباب دجاج سيخ",
+        "price": 35,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Spiced minced chicken skewers with green chilies, coriander, and royal garam masala grilled to juicy perfection."
+      },
+      {
+        "name": "Mutton Seekh Kebab",
+        "nameAr": "كباب لحم سيخ",
+        "price": 40,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Prime minced lamb skewers seasoned with aromatic herbs and char-grilled for a rich, smoky essence."
+      },
+      {
+        "name": "Mutton Galouti Kebab",
+        "nameAr": "كباب جلاوتي لحم لكناوي",
+        "price": 40,
+        "veg": false,
+        "spicy": 1,
+        "desc": "The legendary Lucknowi delicacy — melt-in-the-mouth smoked minced lamb infused with 32 secret spices.",
+        "special": true
+      },
+      {
+        "name": "Grand Royal Kebab Platter",
+        "nameAr": "طبق مشاوي مشكل فاخر",
+        "price": 75,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Lavish assortment of Murgh Tikka, Reshmi Kebab, Mutton Seekh, and Tandoori Prawns with mint dip.",
+        "special": true
+      },
+      {
+        "name": "Punjabi Chicken Tikka",
+        "nameAr": "تكا دجاج بنجابي",
+        "price": 35,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Boneless chicken cubes marinated in mustard oil, roasted cumin, and pickle spices."
+      },
+      {
+        "name": "Reshmi Malai Kebab",
+        "nameAr": "كباب رشمي مالاي دجاج",
+        "price": 37,
+        "veg": false,
+        "spicy": 1,
+        "desc": "Tender chicken supreme infused with cashews, heavy cream, cardamom, and white pepper."
+      },
+      {
+        "name": "Murgh Mint Kebab",
+        "nameAr": "كباب دجاج بالنعناع",
+        "price": 35,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Succulent chicken pieces coated in fresh garden mint, coriander, and zesty lemon glaze."
+      },
+      {
+        "name": "Classic Tandoori Chicken (Half / Full)",
+        "nameAr": "دجاج تندوري كلاسيكي",
+        "price": 45,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Whole spring chicken marinated overnight in Kashmiri deggi mirch and roasted in glowing clay tandoor."
+      },
+      {
+        "name": "Chicken Tiranga Kebab",
+        "nameAr": "كباب دجاج تيرانجا ثلاثي",
+        "price": 38,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Tricolor tasting trio combining spicy Tikka, rich Malai Kebab, and fragrant Mint Kebab.",
+        "special": true
+      }
+    ]
+  },
+  {
+    "category": "Heritage Mutton Curries",
+    "categoryAr": "إدامات اللحم التراثية",
+    "page": 4,
+    "description": "Simmered low and slow for hours to extract deep marrow richness and complex spice symphonies.",
+    "items": [
+      {
+        "name": "Kadai Gosht",
+        "nameAr": "كاداي غوشت لحم",
+        "price": 45,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Tender lamb chunks braised with crushed coriander seeds, bell peppers, and tangy tomato kadai masala."
+      },
+      {
+        "name": "Keema Matar Masala",
+        "nameAr": "قيمة لحم بالبازلاء",
+        "price": 45,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Rich minced lamb and tender green peas simmered in a robust, caramelized onion-tomato gravy."
+      },
+      {
+        "name": "Royal Rajasthani Laal Maas",
+        "nameAr": "لال ماس راجستاني حار",
+        "price": 45,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Fierce royal Rajasthani lamb curry prepared with Mathania red chilies, garlic, and smoky ghee.",
+        "special": true
+      },
+      {
+        "name": "Awadhi Mutton Rogan Josh",
+        "nameAr": "روغان جوش كشميري",
+        "price": 48,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Traditional Kashmiri slow-cooked lamb in aromatic gravy infused with alkanet root and fennel."
+      }
+    ]
+  },
+  {
+    "category": "Royal Chicken Curries",
+    "categoryAr": "إدامات الدجاج الفاخرة",
+    "page": 8,
+    "description": "From decadent creamy makhani to fiery regional curries, prepared with prime boneless chicken.",
+    "items": [
+      {
+        "name": "The Spice Club Butter Chicken",
+        "nameAr": "دجاج بالزبدة الفاخر",
+        "price": 37,
+        "veg": false,
+        "spicy": 1,
+        "desc": "Charred tandoori chicken simmered in a velvety sun-ripened tomato, butter, and honey-fenugreek gravy.",
+        "special": true
+      },
+      {
+        "name": "Murgh Tikka Masala",
+        "nameAr": "تكا مسالا دجاج",
+        "price": 35,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Smoky grilled chicken tikka simmered in a creamy, medium-spiced tomato-onion sauce."
+      },
+      {
+        "name": "Makhmali Murgh Tikka Masala",
+        "nameAr": "مخملي دجاج تكا مسالا",
+        "price": 38,
+        "veg": false,
+        "spicy": 1,
+        "desc": "Delicate chicken tikka in a mild, silk-smooth buttery gravy with cashew paste."
+      },
+      {
+        "name": "Kadai Chicken",
+        "nameAr": "كاداي دجاج",
+        "price": 38,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Chicken tossed with wok-charred capsicum, red onions, and freshly ground kadai spices."
+      },
+      {
+        "name": "Dum Ka Murgh",
+        "nameAr": "دم كا دجاج حيدر آبادي",
+        "price": 50,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Tender chicken slow-cooked on dum with rich cashew paste, fried onions, and saffron essence.",
+        "special": true
+      },
+      {
+        "name": "Murgh Musallam",
+        "nameAr": "دجاج مسلم فاخر بالجبن",
+        "price": 50,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Mughlai whole chicken specialty in decadent spiced gravy topped with melted golden cheese."
+      },
+      {
+        "name": "Rara Chicken",
+        "nameAr": "رارا دجاج مع مفروم اللحم",
+        "price": 40,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Tender bone-in chicken braised together with minced meat in an intensely rich spiced reduction."
+      },
+      {
+        "name": "Chicken Kolhapuri",
+        "nameAr": "دجاج كولهابوري حار",
+        "price": 35,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Fiery Maharashtra-style chicken curry crafted with roasted coconut, sesame, and dried red chilies."
+      }
+    ]
+  },
+  {
+    "category": "Seafood & Coastal Curries",
+    "categoryAr": "مأكولات بحرية وإدامات ساحلية",
+    "page": 9,
+    "description": "Fresh Arabian Gulf catch paired with coconut milk, tamarind, and aromatic coastal spices.",
+    "items": [
+      {
+        "name": "Chef Signature Fish Curry",
+        "nameAr": "كاري السمك الخاص بالشيف",
+        "price": 40,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Fresh sea fish simmered in a tangy coastal gravy with tamarind, coconut, and curry leaves.",
+        "special": true
+      },
+      {
+        "name": "Mahi Fish Tikka Masala",
+        "nameAr": "تكا سمك ماهي مسالا",
+        "price": 40,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Tandoor-charred fish steaks in a velvety, smoky tomato reduction."
+      },
+      {
+        "name": "Kolhapuri Jeenga (Prawns)",
+        "nameAr": "روبيان كولهابوري حار",
+        "price": 45,
+        "veg": false,
+        "spicy": 3,
+        "desc": "Jumbo succulent prawns bathed in fiery roasted spice gravy."
+      },
+      {
+        "name": "Coastal Jeenga Curry",
+        "nameAr": "كاري الروبيان الساحلي",
+        "price": 45,
+        "veg": false,
+        "spicy": 2,
+        "desc": "Fresh Gulf prawns slow-simmered with coconut milk, mustard seeds, and fragrant spices."
+      }
+    ]
+  },
+  {
+    "category": "Vegetarian Specialties & Dal",
+    "categoryAr": "أطباق نباتية ودال",
+    "page": 7,
+    "description": "Pure vegetarian delicacies showcasing fresh cottage cheese (paneer), organic lentils, and seasonal vegetables.",
+    "items": [
+      {
+        "name": "Spice Club Special Dal Makhani",
+        "nameAr": "دال مخاني الخاص بالشيف",
+        "price": 35,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Black lentils and kidney beans slow-simmered for 24 hours over charcoal with churned butter and cream.",
+        "special": true
+      },
+      {
+        "name": "Punjabi Dal Tadka",
+        "nameAr": "دال تادكا بنجابي أصفر",
+        "price": 28,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Yellow toor lentils tempered with sizzling garlic, cumin, hing, and dried whole red chilies."
+      },
+      {
+        "name": "Paneer Lababdar",
+        "nameAr": "بانير لبابدار غني",
+        "price": 37,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Soft cottage cheese cubes in a rich tomato-onion gravy enhanced with crushed spices and hint of sweetness."
+      },
+      {
+        "name": "Palak Paneer",
+        "nameAr": "بالاك بانير بالسبانخ",
+        "price": 37,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Velvety creamed garden spinach purée blended with fresh paneer cubes and garlic."
+      },
+      {
+        "name": "Kadai Paneer",
+        "nameAr": "كاداي بانير بالخضار",
+        "price": 35,
+        "veg": true,
+        "spicy": 3,
+        "desc": "Paneer cubes wok-tossed with crisp bell peppers, onions, and coarse pounded kadai spices."
+      },
+      {
+        "name": "Paneer Makhani",
+        "nameAr": "بانير مخاني بالزبدة",
+        "price": 37,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Soft cottage cheese cubes immersed in rich makhani gravy with butter and kasuri methi."
+      },
+      {
+        "name": "Hare Pyaz ka Paneer",
+        "nameAr": "بانير بالبصل الأخضر",
+        "price": 37,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Fresh paneer tossed with tender spring onions, ginger juliennes, and ground spices."
+      },
+      {
+        "name": "Mix Veg Miloni",
+        "nameAr": "مكس خضار ميلوني",
+        "price": 30,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Colorful medley of garden vegetables simmered in a mildly spiced spinach and cashew gravy."
+      }
+    ]
+  },
+  {
+    "category": "Vegetarian Starters & Kebabs",
+    "categoryAr": "مقبلات وكباب نباتي",
+    "page": 10,
+    "description": "Crispy rolls, stuffed mushroom tikkas, and tandoori paneer kebabs marinated with herbs and spices.",
+    "items": [
+      {
+        "name": "Reshmi Malai Paneer Tikka",
+        "nameAr": "بانير مالاي تكا بالجبن",
+        "price": 40,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Cottage cheese stuffed with cheese and nuts, grilled in creamy cashew and cardamom marinade.",
+        "special": true
+      },
+      {
+        "name": "Paneer Sufiyana",
+        "nameAr": "بانير صوفيانا ناعم",
+        "price": 35,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Melt-in-the-mouth paneer kebabs seasoned with fennel and crushed royal spices."
+      },
+      {
+        "name": "Paneer Tiranga",
+        "nameAr": "بانير تيرانجا ثلاثي",
+        "price": 35,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Tasting platter of spicy Tikka, creamy Malai, and refreshing Mint Paneer kebabs.",
+        "special": true
+      },
+      {
+        "name": "Tandoori Paneer Money Bag",
+        "nameAr": "حقائب البانير المقرمشة",
+        "price": 25,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Crispy wonton pouches filled with rich spiced tandoori cottage cheese and herbs."
+      },
+      {
+        "name": "Tandoori Paneer Spring Roll",
+        "nameAr": "سبرينغ رول بانير تندوري",
+        "price": 25,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Crispy hand-rolled pastries packed with smoky tandoori paneer and vegetables."
+      },
+      {
+        "name": "Hara Bhara Kebab",
+        "nameAr": "كباب هارا بهارا بالسبانخ",
+        "price": 35,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Nutritious golden patties made with spinach, green peas, potatoes, and royal spices."
+      },
+      {
+        "name": "Stuffed Mushroom Tikka",
+        "nameAr": "مشروم محشي تكا مشوي",
+        "price": 35,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Plump button mushrooms stuffed with spiced cottage cheese and charred in tandoor."
+      }
+    ]
+  },
+  {
+    "category": "Artisanal Tandoori Breads",
+    "categoryAr": "خبز التندور الطازج",
+    "page": 5,
+    "description": "Slapped onto the scorching terracotta walls of our tandoor oven, served piping hot with butter or garlic.",
+    "items": [
+      {
+        "name": "Garlic Naan",
+        "nameAr": "نان بالثوم والأعشاب",
+        "price": 6,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Clay oven flatbread brushed with garlic butter and fresh cilantro."
+      },
+      {
+        "name": "Cheese Naan",
+        "nameAr": "نان محشي بالجبن",
+        "price": 8,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Fluffy tandoori bread stuffed with gooey melted cheese."
+      },
+      {
+        "name": "Butter Naan / Plain Naan",
+        "nameAr": "نان بالزبدة أو سادة",
+        "price": 5,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Classic tear-drop leavened flatbread brushed with golden butter."
+      },
+      {
+        "name": "Tandoori Roti / Butter Roti",
+        "nameAr": "روتي تندور قمح كامل",
+        "price": 5,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Wholesome whole wheat flatbread baked directly over tandoori embers."
+      },
+      {
+        "name": "Laccha Paratha",
+        "nameAr": "لاكا باراثا مورقة",
+        "price": 7,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Crispy, multi-layered whole wheat bread brushed with clarified ghee."
+      }
+    ]
+  },
+  {
+    "category": "Salads, Raitas & Accompaniments",
+    "categoryAr": "السلطات والرايتا والمقبلات",
+    "page": 11,
+    "description": "Refreshing cold accompaniments that complement our bold curries and tandoori grills.",
+    "items": [
+      {
+        "name": "Tandoori Chicken Salad",
+        "nameAr": "سلطة دجاج تندوري",
+        "price": 25,
+        "veg": false,
+        "spicy": 1,
+        "desc": "Smoky tandoori chicken slivers tossed with crisp garden greens and lemon dressing."
+      },
+      {
+        "name": "Fattoush Salad",
+        "nameAr": "سلطة فتوش طازجة",
+        "price": 20,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Crisp romaine, tomatoes, sumac, cucumbers, and golden toasted pita chips."
+      },
+      {
+        "name": "Greek Salad",
+        "nameAr": "سلطة يونانية بالفيتا",
+        "price": 25,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Vine-ripened tomatoes, cucumbers, Kalamata olives, and creamy feta cheese."
+      },
+      {
+        "name": "Shirazi Salad",
+        "nameAr": "سلطة شيرازي ناعمة",
+        "price": 15,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Diced cucumber, tomato, and red onions with fresh lemon and extra virgin olive oil."
+      },
+      {
+        "name": "Pineapple Raita",
+        "nameAr": "رايتا الأناناس المنعشة",
+        "price": 15,
+        "veg": true,
+        "spicy": 0,
+        "desc": "Thick whipped yogurt infused with sweet pineapple chunks and roasted cumin."
+      },
+      {
+        "name": "Boondi Raita",
+        "nameAr": "رايتا بوندي المقرمشة",
+        "price": 10,
+        "veg": true,
+        "spicy": 1,
+        "desc": "Spiced yogurt sprinkled with crisp chickpea droplets and black salt."
+      },
+      {
+        "name": "Masala Papad (Fry / Roasted)",
+        "nameAr": "بابادام ماسالا مقرمش",
+        "price": 18,
+        "veg": true,
+        "spicy": 2,
+        "desc": "Crispy lentil crackers topped with spiced chopped onions, tomatoes, and chaat masala."
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Vercel & Deployment
+.vercel/
+
+# Development screenshots & temp files
+assets/screenshot_*.png
+*.log
