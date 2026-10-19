@@ -1020,4 +1020,114 @@ document.addEventListener('DOMContentLoaded', () => {
     if (zoomImg) zoomImg.src = src;
     modal.style.display = 'flex';
   }
+
+  // ==========================================================================
+  // Refero Royal Enhancements: Scroll Reveal & Showcase Preorder
+  // ==========================================================================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-on-scroll, .section-header, .showcase-card, .testimonial-card, .location-unified-card').forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    revealObserver.observe(el);
+  });
+
+  // Showcase Preorder Actions
+  document.querySelectorAll('.showcase-preorder-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dish = btn.getAttribute('data-dish');
+      const notesField = document.getElementById('bookingNotes');
+      if (notesField) {
+        if (!notesField.value.includes(dish)) {
+          notesField.value = notesField.value ? `${notesField.value}, ${dish}` : `Chef's Choice: ${dish}`;
+        }
+      }
+      document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' });
+      if (notesField) {
+        notesField.focus();
+      }
+    });
+  });
+
+  // Dish Spec Modal Interactions
+  const dishModal = document.getElementById('dishModalBackdrop');
+  const dishModalClose = document.getElementById('dishModalClose');
+  const modalDishName = document.getElementById('modalDishName');
+  const modalDishArabic = document.getElementById('modalDishArabic');
+  const modalDishPrice = document.getElementById('modalDishPrice');
+  const modalDishDesc = document.getElementById('modalDishDesc');
+  const modalDishCategory = document.getElementById('modalDishCategory');
+  const modalDietBadge = document.getElementById('modalDietBadge');
+  const modalAddToBookingBtn = document.getElementById('modalAddToBookingBtn');
+
+  let currentModalDish = '';
+
+  function openDishModal(item) {
+    if (!dishModal) return;
+    currentModalDish = item.name;
+    if (modalDishName) modalDishName.textContent = item.name;
+    if (modalDishArabic) modalDishArabic.textContent = item.nameAr || '';
+    if (modalDishPrice) modalDishPrice.textContent = item.price;
+    if (modalDishDesc) modalDishDesc.textContent = item.desc;
+    if (modalDishCategory) modalDishCategory.textContent = item.categoryName || 'Royal Selection';
+    if (modalDietBadge) {
+      modalDietBadge.textContent = item.veg ? 'Pure Vegetarian' : 'Halal Meat Prepared';
+      modalDietBadge.style.color = item.veg ? '#55ea8d' : '#dfb746';
+      modalDietBadge.style.borderColor = item.veg ? 'rgba(37, 211, 102, 0.4)' : 'rgba(212, 175, 55, 0.4)';
+    }
+    dishModal.classList.add('active');
+    dishModal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDishModal() {
+    if (!dishModal) return;
+    dishModal.classList.remove('active');
+    dishModal.setAttribute('aria-hidden', 'true');
+  }
+
+  dishModalClose?.addEventListener('click', closeDishModal);
+  dishModal?.addEventListener('click', (e) => {
+    if (e.target === dishModal) closeDishModal();
+  });
+
+  modalAddToBookingBtn?.addEventListener('click', () => {
+    closeDishModal();
+    const notesField = document.getElementById('bookingNotes');
+    if (notesField && currentModalDish) {
+      if (!notesField.value.includes(currentModalDish)) {
+        notesField.value = notesField.value ? `${notesField.value}, ${currentModalDish}` : `Selected Special: ${currentModalDish}`;
+      }
+    }
+    document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' });
+    if (notesField) notesField.focus();
+  });
+
+  // Attach card click to open dish modal
+  document.getElementById('menuItemsGrid')?.addEventListener('click', (e) => {
+    if (e.target.closest('.btn-add-tasting') || e.target.closest('.cat-jump-pill')) {
+      return;
+    }
+    const card = e.target.closest('.menu-card');
+    if (card) {
+      const dishId = card.id.replace('dish-', '');
+      let found = null;
+      for (const cat of MENU_DATA) {
+        found = cat.items.find(i => i.id === dishId);
+        if (found) {
+          found.categoryName = cat.category;
+          break;
+        }
+      }
+      if (found) {
+        openDishModal(found);
+      }
+    }
+  });
+
 });

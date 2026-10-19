@@ -2714,3 +2714,314 @@ h1, h2, h3, h4, h5, h6 {
 .fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
+
+
+/* ==========================================================================
+   Royal Heritage Marquee Ribbon (Refero Luxury Movement Pattern)
+   ========================================================================== */
+.royal-marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(7, 18, 14, 0.95), rgba(15, 36, 28, 0.95), rgba(7, 18, 14, 0.95));
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 0.75rem 0;
+  user-select: none;
+  position: relative;
+  z-index: 5;
+}
+
+.royal-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: marqueeScroll 45s linear infinite;
+  gap: 2.5rem;
+}
+
+.royal-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.royal-marquee-track span {
+  font-family: var(--font-display, serif);
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-light, #f5e4ab);
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.9;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Showcase 4-Plate Grid & Interactive Hover Reveal
+   ========================================================================== */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+  margin-top: 2rem;
+}
+
+.showcase-card {
+  position: relative;
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  height: 480px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  background: #081611;
+  transition: transform var(--transition-smooth, 0.4s ease), border-color var(--transition-smooth, 0.4s ease), box-shadow var(--transition-smooth, 0.4s ease);
+}
+
+.showcase-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-primary, #d4af37);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.showcase-card .arabic-sub {
+  display: block;
+  font-family: var(--font-arabic, sans-serif);
+  font-size: 1.05rem;
+  color: var(--gold-light, #f5e4ab);
+  margin-top: 0.25rem;
+  font-weight: normal;
+  opacity: 0.85;
+}
+
+.showcase-action-wrap {
+  margin-top: 1.25rem;
+}
+
+.showcase-preorder-btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+  background: var(--gold-gradient);
+  border: none;
+  color: #07120e;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.showcase-preorder-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   Editorial Gastronomy Reviews & Crown Badges
+   ========================================================================== */
+.review-crown-badge {
+  display: inline-block;
+  font-family: var(--font-display, serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--gold-primary, #d4af37);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-full, 9999px);
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+
+.royal-crest-symbol {
+  color: var(--gold-primary, #d4af37);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+   Scroll Reveal Animations
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ==========================================================================
+   Interactive Royal Dish Spec Modal (Refero Pattern)
+   ========================================================================== */
+.dish-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 8, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.dish-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dish-modal-sheet {
+  background: linear-gradient(145deg, #0b1f18 0%, #06120e 100%);
+  border: 1px solid var(--gold-border, rgba(212, 175, 55, 0.35));
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  padding: 2.25rem 2rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.18);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dish-modal-backdrop.active .dish-modal-sheet {
+  transform: translateY(0) scale(1);
+}
+
+.dish-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--gold-light, #f5e4ab);
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.dish-modal-close:hover {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--gold-primary);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.dish-modal-eyebrow {
+  font-family: var(--font-display, serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-primary, #d4af37);
+  margin-bottom: 0.5rem;
+}
+
+.dish-modal-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.65rem;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+.dish-modal-arabic {
+  font-family: var(--font-arabic, sans-serif);
+  font-size: 1.15rem;
+  color: var(--gold-light, #f5e4ab);
+  margin-bottom: 1.25rem;
+  opacity: 0.88;
+}
+
+.dish-modal-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.dish-modal-price {
+  font-family: var(--font-display, serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-primary, #d4af37);
+}
+
+.dish-modal-curr {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--text-gold, #dfb746);
+  font-weight: 600;
+}
+
+.dish-modal-badge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #55ea8d;
+  border-radius: var(--radius-full, 9999px);
+}
+
+.dish-modal-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #d1ded7;
+  margin-bottom: 1.5rem;
+}
+
+.dish-modal-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.spec-card {
+  background: rgba(15, 36, 28, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8da49a;
+  margin-bottom: 0.25rem;
+}
+
+.spec-value {
+  display: block;
+  font-family: var(--font-display, serif);
+  font-size: 0.84rem;
+  color: var(--gold-light, #f5e4ab);
+  font-weight: 600;
+}
