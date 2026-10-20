@@ -819,16 +819,6 @@ const ReservationEngine = {
       });
     });
 
-    // Dining zone chips
-    this.zoneChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        this.zoneChips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        AppState.reservation.zone = chip.getAttribute('data-zone');
-        showToast(`Preferred zone: ${AppState.reservation.zone}`, '📍');
-      });
-    });
-
     // Time slot pills
     this.timeSlotPills.forEach(pill => {
       pill.addEventListener('click', () => {
@@ -866,7 +856,6 @@ const ReservationEngine = {
     const email = document.getElementById('bookingEmail')?.value.trim();
     const occasion = document.getElementById('bookingOccasion')?.value || 'Dinner';
     const notes = document.getElementById('bookingNotes')?.value.trim();
-    const zone = AppState.reservation.zone || 'Canal Terrace';
 
     if (!name || !phone) {
       alert('Please provide your name and phone number for table reservation.');
@@ -894,8 +883,6 @@ const ReservationEngine = {
     
     const occEl = document.getElementById('voucherOccasion');
     if (occEl) occEl.textContent = occasion;
-    const zoneEl = document.getElementById('voucherZone');
-    if (zoneEl) zoneEl.textContent = zone;
 
     // Build WhatsApp Deep Link
     const waText = encodeURIComponent(
@@ -904,7 +891,6 @@ const ReservationEngine = {
       `• VIP Pass Ref: ${bookingRef}\n` +
       `• Guest Name: ${name}\n` +
       `• Party Size: ${AppState.reservation.guests} Persons\n` +
-      `• Seating Zone: ${zone}\n` +
       `• Date & Time: ${AppState.reservation.date} at ${AppState.reservation.time}\n` +
       `• Occasion: ${occasion}\n` +
       (notes ? `• Special Requests / Selected Dishes: ${notes}\n` : '') +
@@ -1081,13 +1067,7 @@ const AmbianceSwitcher = {
         }, 180);
 
         if (zone) {
-          const zoneBtn = document.querySelector(`.zone-chip-btn[data-zone="${zone}"]`);
-          if (zoneBtn) {
-            document.querySelectorAll('.zone-chip-btn').forEach(z => z.classList.remove('active'));
-            zoneBtn.classList.add('active');
-            AppState.reservation.zone = zone;
-          }
-          showToast(`Atmosphere set to ${zone}`, '✨');
+          showToast(`Atmosphere: ${zone}`, '✨');
         }
       });
     });

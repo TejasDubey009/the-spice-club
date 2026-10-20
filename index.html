@@ -612,13 +612,11 @@
 
         <!-- The Reservation Form -->
         <form class="booking-form" id="tableBookingForm">
-          <!-- Step 1: Party Size & Seating Zone -->
+          <!-- Step 1: Party Size -->
           <div class="form-step-block">
             <div class="form-step-title">
-              <span>1</span> Guests & Seating Preference
+              <span>1</span> Number of Guests
             </div>
-            
-            <label class="form-sub-label">Number of Guests</label>
             <div class="guest-chips-grid">
               <button type="button" class="guest-chip-btn" data-guests="1">1</button>
               <button type="button" class="guest-chip-btn active" data-guests="2">2</button>
@@ -628,22 +626,6 @@
               <button type="button" class="guest-chip-btn" data-guests="6">6</button>
               <button type="button" class="guest-chip-btn" data-guests="8">8</button>
               <button type="button" class="guest-chip-btn" data-guests="10">10+</button>
-            </div>
-
-            <label class="form-sub-label" style="margin-top: 1.15rem;">Preferred Atmosphere & Zone</label>
-            <div class="dining-zone-chips-grid" id="zoneChips">
-              <button type="button" class="zone-chip-btn active" data-zone="Canal Terrace">
-                <span class="zone-icon">🌊</span>
-                <span>Canal Terrace (Waterfront)</span>
-              </button>
-              <button type="button" class="zone-chip-btn" data-zone="Maharaja Hall">
-                <span class="zone-icon">👑</span>
-                <span>Maharaja Hall (Chandeliers)</span>
-              </button>
-              <button type="button" class="zone-chip-btn" data-zone="Private Alcove">
-                <span class="zone-icon">🥂</span>
-                <span>Private Alcove / Booth</span>
-              </button>
             </div>
           </div>
 
@@ -765,10 +747,6 @@
               <div class="voucher-data-item">
                 <p>Date & Time</p>
                 <p id="voucherDateTime">Tonight at 8:00 PM</p>
-              </div>
-              <div class="voucher-data-item">
-                <p>Dining Zone</p>
-                <p id="voucherZone">Canal Terrace (Waterfront)</p>
               </div>
               <div class="voucher-data-item">
                 <p>Occasion</p>
